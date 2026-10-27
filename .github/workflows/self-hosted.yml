@@ -1,0 +1,19 @@
+name: Day 42 - self hosted runner Demo
+
+on: workflow_dispatch
+
+jobs: 
+  self-hosted-runner-demo:
+    runs-on: self-hosted
+    steps:
+      - name: print the hostname of the machine
+        run: hostname
+
+      - name: print the working directory
+        run: pwd
+
+      - name: create a file on the machine
+        run: touch /tmp/my_file.txt
+
+      - name: verify my file exist on machine
+        run: ls -la /tmp/my_file.txt
